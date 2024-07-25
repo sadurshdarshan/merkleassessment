@@ -5,12 +5,16 @@ import json
 # fetch data from json url
 def fetch_data(url):
     try:
-        response = requests.get(url)  # to make a get request from the url
-        if response.status_code == 200:  # check the request was successful
+        # to make a get request from the url
+        response = requests.get(url)
+
+        # check the request was successful
+        if response.status_code == 200:
             data = response.json()
             return data
         else:
-            print(f"Failed to fetch data: {response.status_code}")  # error handling if response has bad request
+            # error handling if response has bad request
+            print(f"Failed to fetch data: {response.status_code}")
             return None
     except Exception as e:
         print(f"Failed to fetch data: {str(e)}")
